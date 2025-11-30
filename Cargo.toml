@@ -1,6 +1,4 @@
-[package]
-name = "advent-of-code-v2"
-version = "0.1.0"
-edition = "2024"
-
-[dependencies]
+[workspace]
+resolver = "3"
+members = ["aoc_utils"]
+default-members = ["aoc_utils"]

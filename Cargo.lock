@@ -3,5 +3,5 @@
 version = 4
 
 [[package]]
-name = "advent-of-code-v2"
+name = "aoc_utils"
 version = "0.1.0"
