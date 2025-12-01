@@ -6,6 +6,12 @@ My solutions to the 12 problem version of advent of code in rust. Solutions from
 
 A makefile is provided.
 
+To create the necessary files for implementing a solution run:
+```bash
+make setup YEAR=<year> DAY=<day>
+```
+
+To execute a solution run:
 ```bash
 make run YEAR=<year> DAY=<day>
 ```
