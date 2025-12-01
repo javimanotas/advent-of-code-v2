@@ -40,10 +40,13 @@ fn add_crate_to_workspace(name: &str) {
         .parse::<DocumentMut>()
         .expect("Failed to parse root Cargo.toml");
 
-    doc.get_mut("workspace")
+    if let Some(m) = doc
+        .get_mut("workspace")
         .and_then(|ws| ws.get_mut("members"))
         .and_then(|m| m.as_array_mut())
-        .map(|m| m.push(name));
+    {
+        m.push(name)
+    }
 }
 
 fn setup_crate(crate_name: &str) {
