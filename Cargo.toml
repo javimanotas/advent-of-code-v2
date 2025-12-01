@@ -1,4 +1,4 @@
 [workspace]
 resolver = "3"
-members = ["aoc_utils"]
-default-members = ["aoc_utils"]
+members = ["aoc_utils", "aoc_setup"]
+default-members = ["aoc_utils", "aoc_setup"]
