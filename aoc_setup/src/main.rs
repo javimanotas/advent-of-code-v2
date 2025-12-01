@@ -44,8 +44,6 @@ fn add_crate_to_workspace(name: &str) {
         .and_then(|ws| ws.get_mut("members"))
         .and_then(|m| m.as_array_mut())
         .map(|m| m.push(name));
-
-    // fs::write(toml_path, doc.to_string()).expect("Failed to write to root Cargo.toml");
 }
 
 fn setup_crate(crate_name: &str) {
