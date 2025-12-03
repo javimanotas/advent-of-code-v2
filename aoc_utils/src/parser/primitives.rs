@@ -3,6 +3,38 @@
 
 use super::{Parser, ParserImpl};
 
+///////////////////////////////////////////////////
+//                    AnyChar                    //
+///////////////////////////////////////////////////
+
+/// Parser that returns the first char.
+#[derive(Clone, Copy)]
+pub struct AnyChar {}
+
+/// Creates a parser that returns the first char.
+///
+/// # Returns
+/// A new `Parser` that produces `char`.
+///
+/// # Examples
+/// ```
+/// use aoc_utils::parser::*;
+///
+/// assert_eq!(any_char().run_parser("blablabla"), Some('b'));
+/// assert_eq!(any_char().run_parser(""), None);
+/// ```
+pub fn any_char() -> ParserImpl<AnyChar> {
+    ParserImpl(AnyChar {})
+}
+
+impl Parser for AnyChar {
+    type Output = char;
+
+    fn parse<'a>(&self, input: &'a str) -> Option<(Self::Output, &'a str)> {
+        input.chars().next().map(|c| (c, &input[1..]))
+    }
+}
+
 ///////////////////////////////////////////////
 //                    Eof                    //
 ///////////////////////////////////////////////
