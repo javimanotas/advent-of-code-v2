@@ -25,6 +25,7 @@ edition = "2024"
 [dependencies]
 aoc_utils = {{ path = "../aoc_utils" }}
 itertools = "0.14.0"
+rayon = "1.11.0"
 "#,
         name
     );
